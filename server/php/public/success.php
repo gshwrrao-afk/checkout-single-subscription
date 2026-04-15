@@ -3,6 +3,11 @@ require '../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
 $dotenv->load();
 
+# Don't put any keys in code. Use an environment variable (as shown
+# here) or secrets vault to supply keys to your integration.
+#
+# See https://docs.stripe.com/keys-best-practices and find your
+# keys at https://dashboard.stripe.com/apikeys.
 \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET_KEY']);
 
 // Fetch the Checkout Session to display the JSON result on the success page
