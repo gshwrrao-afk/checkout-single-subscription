@@ -106,6 +106,11 @@ RSpec.configure do |config|
 end
 
 Dotenv.load
+# Don't put any keys in code. Use an environment variable (as shown
+# here) or secrets vault to supply keys to your integration.
+#
+# See https://docs.stripe.com/keys-best-practices and find your
+# keys at https://dashboard.stripe.com/apikeys.
 Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 
 SERVER_URL = ENV.fetch('SERVER_URL', 'http://localhost:4242')
